@@ -15,7 +15,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @article.user %>
+  <%= @article.user.first_name + " " + @article.user.last_name %>
 </p>
 
 <% if logged_in?(:editor_user) %>
