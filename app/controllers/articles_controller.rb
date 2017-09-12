@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  access all: [:index], editor_user: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
+  access all: [:index], user: {except: [:destroy, :new, :create, :update, :edit]}, editor_user: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
 
   def index
     @articles = Article.all
