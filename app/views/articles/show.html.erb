@@ -18,5 +18,7 @@
   <%= @article.user %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<% if logged_in?(:editor_user) %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+<% end %>
 <%= link_to 'Back', articles_path %>
