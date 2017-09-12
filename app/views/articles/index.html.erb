@@ -9,11 +9,11 @@
   <div class="s6 article-index-post">
     <h5><%= article.title %></h5>
     <em>by <%= article.user.first_name + " " + article.user.last_name %></em>
-    (
-    <%= link_to 'Show', article %> |
-    <%= link_to 'Edit', edit_article_path(article) if logged_in?(:editor_user) %> |
-    <%= link_to 'Destroy', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:editor_user) %>
-    )
+    <% if logged_in?(:editor_user) %>
+      <%= render "editor_options", article: article  %>
+    <% elsif logged_in?(:admin_user) %>
+      <%= render "admin_options", article: article  %>
+    <% end %>
     <p class="small">Category: <%= article.category %></p>
     <p class="lead"><%= article.content %></p>
   </div>

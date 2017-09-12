@@ -1,0 +1,5 @@
+<% if logged_in?(:editor_user) %>
+  <%= render "editor_options", article: article  %>
+<% elsif logged_in?(:admin_user) %>
+  <%= render "admin_options", article: article  %>
+<% end %>
