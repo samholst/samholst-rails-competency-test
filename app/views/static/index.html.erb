@@ -1,2 +1,23 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<div class="row">
+  <h4 class="center-content">Ruby Articles</h4>
+  <% @ruby_articles.each do |ruby_article| %>
+    <h5><%= ruby_article.title %></h5>
+    <p><%= ruby_article.content %></p>
+  <% end %>
+
+  <hr>
+
+  <h4 class="center-content">Game Articles</h4>
+  <% @game_articles.each do |game_article| %>
+    <h5><%= game_article.title %></h5>
+    <p><%= game_article.content %></p>
+  <% end %>
+
+  <hr>
+
+  <h4 class="center-content">Car Articles</h4>
+  <% @car_articles.each do |car_article| %>
+    <h5><%= car_article.title %></h5>
+    <p><%= car_article.content %></p>
+  <% end %>
+</div>

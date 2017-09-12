@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  access all: [:show, :index], editor_user: {except: [:destroy, :new, :create, :update, :edit]}, admin_user: :all
+  access all: [:index], editor_user: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
 
   def index
     @articles = Article.all
@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @articles.user_id = current_user.id
 
     respond_to do |format|
       if @article.save
