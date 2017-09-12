@@ -14,11 +14,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    check_owner
   end
 
   def create
     @article = Article.new(article_params)
-    @articles.user_id = current_user.id
+    @article.user_id = current_user.id
 
     respond_to do |format|
       if @article.save
@@ -32,6 +33,9 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
+    check_owner
+
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -59,5 +63,11 @@ class ArticlesController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :content, :category, :user_id)
+    end
+
+    def check_owner
+      if current_user.id != @article.user_id
+        format.html { redirect_to articles_path, notice: 'You are not the posts owner.' }
+      end
     end
 end
