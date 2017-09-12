@@ -10,7 +10,9 @@
     <h5><%= article.title %></h5>
     <em>by <%= article.user.first_name + " " + article.user.last_name %></em>
     (
-    <%= link_to 'Show', article %> | <%= link_to 'Edit', edit_article_path(article) if logged_in?(:editor_user) %> | <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:editor_user) %>
+    <%= link_to 'Show', article %> |
+    <%= link_to 'Edit', edit_article_path(article) if logged_in?(:editor_user) %> |
+    <%= link_to 'Destroy', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:editor_user) %>
     )
     <p class="small">Category: <%= article.category %></p>
     <p class="lead"><%= article.content %></p>
