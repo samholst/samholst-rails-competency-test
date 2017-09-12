@@ -54,3 +54,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
+gem 'materialize-sass', '~> 0.100.2'
+gem 'material_icons', '~> 2.2', '>= 2.2.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
