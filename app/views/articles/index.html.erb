@@ -11,8 +11,10 @@
     <em>by <%= article.user.first_name + " " + article.user.last_name %></em>
     <% if logged_in?(:editor_user) %>
       <%= render "editor_options", article: article  %>
-    <% elsif logged_in?(:admin_user) %>
+    <% elsif  %>
       <%= render "admin_options", article: article  %>
+    <% else %>
+      <%= render "user_options", article: article  %>
     <% end %>
     <p class="small">Category: <%= article.category %></p>
     <p class="lead"><%= article.content %></p>
