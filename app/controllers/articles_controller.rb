@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
 
     def check_owner
       if current_user.id != @article.user_id
-        format.html { redirect_to articles_path, notice: 'You are not the posts owner.' }
+        redirect_to articles_path, notice: 'You are not the posts owner.'
       end
     end
 end
