@@ -4,17 +4,17 @@
   <%= devise_error_messages! %>
   <div class="input-field">
     <%= f.text_field :first_name, autofocus: true %>
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name, 'data-error' => "Invalid Fist Name", 'data-success' => "Valid First Name" %><br />
   </div>
 
   <div class="input-field">
     <%= f.text_field :last_name%>
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name, 'data-error' => "Invalid Last Name", 'data-success' => "Valid Last Name" %><br />
   </div>
 
   <div class="input-field">
-    <%= f.email_field :email %>
-    <%= f.label :email %><br />
+    <%= f.email_field :email, class: 'validate' %>
+    <%= f.label :email, 'data-error' => "Invalid Email Address", 'data-success' => "Valid Email Address" %><br />
   </div>
 
   <div class="input-field">
