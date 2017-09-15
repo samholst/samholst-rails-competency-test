@@ -8,3 +8,23 @@
   display: flex;
   justify-content: center;
 }
+
+.card-content-two {
+  color: white;
+}
+
+.card-stacked:hover {
+  color: white;
+  background-color: #546E7A;
+}
+
+.card-on-hover {
+  color: black !important;
+  background-color: white !important;
+}
+
+@media (min-width: 768px) {
+  .brand-logo {
+    margin-left: 10px;
+  }
+}
