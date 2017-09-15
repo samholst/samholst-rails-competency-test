@@ -1,23 +1,56 @@
-<div class="row">
+<div class="row article-row">
   <h4 class="center-content">Ruby Articles</h4>
   <% @ruby_articles.each do |ruby_article| %>
-    <h5><%= ruby_article.title %></h5>
-    <p><%= ruby_article.content %></p>
+    <div class="col s12 m6 article-main">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <h2 class="header article-title"><%= ruby_article.title %></h2>
+          <div class="card-content">
+            <p><%= ruby_article.content %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to 'View Article', ruby_article %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
+</div>
 
-  <hr>
-
+<div class="row article-row">
   <h4 class="center-content">Game Articles</h4>
   <% @game_articles.each do |game_article| %>
-    <h5><%= game_article.title %></h5>
-    <p><%= game_article.content %></p>
+    <div class="col s12 m6 article-main">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <h2 class="header article-title"><%= game_article.title %></h2>
+          <div class="card-content">
+            <p><%= game_article.content %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to 'View Article', game_article %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
+</div>
 
-  <hr>
-
+<div class="row article-row">
   <h4 class="center-content">Car Articles</h4>
   <% @car_articles.each do |car_article| %>
-    <h5><%= car_article.title %></h5>
-    <p><%= car_article.content %></p>
+    <div class="col s12 m6 article-main">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <h2 class="header article-title"><%= car_article.title %></h2>
+          <div class="card-content">
+            <p><%= car_article.content %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to 'View Article', car_article %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>

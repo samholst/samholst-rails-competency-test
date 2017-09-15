@@ -1,3 +1,36 @@
 .article-index-post {
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
+}
+
+.article-title {
+  display: flex;
+  justify-content: center;
+}
+
+#columns {
+  -webkit-column-count: 1;
+  -webkit-column-gap: 10px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 1;
+  -moz-column-gap: 10px;
+  -moz-column-fill: auto;
+  column-count: 1;
+  column-gap: 10px;
+  column-fill: auto;
+}
+
+.article-index-post {
+  // width: 300px;
+  display: inline-block;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+}
+
+.article-main {
+  display: inline-block;
+}
+
+.article-row {
+
 }
