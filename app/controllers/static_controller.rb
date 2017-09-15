@@ -1,7 +1,12 @@
 class StaticController < ApplicationController
   def index
-    @car_articles = Article.where(category: "Cars").limit(3)
-    @ruby_articles = Article.where(category: "Ruby").limit(3)
-    @game_articles = Article.where(category: "Games").limit(3)
+    @car_articles = article_limit_three "Cars"
+    @ruby_articles = article_limit_three "Ruby"
+    @game_articles = article_limit_three "Games"
   end
+
+  private
+    def article_limit_three topic
+      Article.where(category: "#{topic}").limit(3)
+    end
 end

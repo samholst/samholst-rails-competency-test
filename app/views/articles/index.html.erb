@@ -5,18 +5,26 @@
   <br><br>
 <% end %>
 
-<% @articles.each do |article| %>
-  <div class="s6 article-index-post">
-    <h5><%= article.title %></h5>
-    <em>by <%= article.user.first_name + " " + article.user.last_name %></em>
-    <% if logged_in?(:editor_user) %>
-      <%= render "editor_options", article: article  %>
-    <% elsif  %>
-      <%= render "admin_options", article: article  %>
-    <% else %>
-      <%= render "user_options", article: article  %>
-    <% end %>
-    <p class="small">Category: <%= article.category %></p>
-    <p class="lead"><%= article.content %></p>
-  </div>
-<% end %>
+<div class="row">
+  <% @articles.each do |article| %>
+    <div class="col s12 m6 article-index-post">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= article.title %></span>
+          <em>by <%= article.user.first_name + " " + article.user.last_name %></em>
+          <br><br>
+          <p><%= article.content %></p>
+        </div>
+        <div class="card-action">
+          <% if logged_in?(:editor_user) %>
+            <%= render "editor_options", article: article  %>
+          <% elsif  %>
+            <%= render "admin_options", article: article  %>
+          <% else %>
+            <%= render "user_options", article: article  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,5 +1,3 @@
-(
-<%= link_to 'View Article', article %> |
-<%= link_to 'Edit', edit_article_path(article) if logged_in?(:editor_user) %> |
-<%= link_to 'Destroy', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:editor_user) %>
-)
+<%= link_to 'View Article', article %>
+<%= link_to 'Edit', edit_article_path(article) if logged_in?(:editor_user) %>
+<%= link_to 'Delete', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:editor_user) %>

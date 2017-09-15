@@ -11,20 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
+  <div class="input-field">
     <%= form.text_field :title, id: :article_title %>
+    <%= form.label :title %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
+    <%= form.text_area :content, id: :article_content, class: "materialize-textarea" %>
     <%= form.label :content %>
-    <%= form.text_area :content, id: :article_content %>
   </div>
 
   <div class="field">
-    <%= form.label :category %>
+
     <%#= form.text_field :category, id: :article_category %>
-    <select id="article_category" name="article[category]" style="display: inherit;">
+    <%= form.label :category %>
+    <select id="article_category" name="article[category]" style="display: inherit;" class="browser-default">
       <option value="Ruby">Ruby</option>
       <option value="Games">Games</option>
       <option value="Cars">Cars</option>

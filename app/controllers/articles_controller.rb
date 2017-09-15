@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :check_owner, only: [:update, :edit, :destroy]
   access all: [:index], user: {except: [:destroy, :new, :create, :update, :edit]}, editor_user: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
 
   def index
@@ -14,7 +15,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    check_owner
   end
 
   def create
@@ -33,9 +33,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-
-    check_owner
-
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
