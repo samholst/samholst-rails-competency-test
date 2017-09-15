@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.card-content-two {
+.card-on-hover {
   color: white;
 }
 
@@ -18,7 +18,7 @@
   background-color: #546E7A;
 }
 
-.card-on-hover {
+.card-on-hover:hover {
   color: black !important;
   background-color: white !important;
 }
