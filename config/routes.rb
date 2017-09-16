@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :users
-    resources :articles
+    # resources :articles
     resources :admin_users
     resources :editor_users
 
