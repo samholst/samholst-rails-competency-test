@@ -23,6 +23,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     roles: Field::String,
+    type: Field::String,
     first_name: Field::String,
     last_name: Field::String,
   }.freeze
@@ -57,6 +58,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :roles,
+    :type,
     :first_name,
     :last_name,
   ].freeze
@@ -77,6 +79,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     # :current_sign_in_ip,
     # :last_sign_in_ip,
     :roles,
+    :type,
     :first_name,
     :last_name,
   ].freeze
