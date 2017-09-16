@@ -5,3 +5,11 @@
 #gritter-notice-wrapper {
   top: 60px;
 }
+
+body {
+  background-image: asset_url('heaven.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
