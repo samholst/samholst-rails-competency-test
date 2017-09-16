@@ -6,10 +6,16 @@
   top: 60px;
 }
 
-body {
+.full-background {
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   background-image: asset_url('heaven.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  position: relative;
+  z-index: -1;
 }
