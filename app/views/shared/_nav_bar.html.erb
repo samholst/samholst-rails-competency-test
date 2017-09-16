@@ -1,6 +1,9 @@
 <nav>
   <div class="nav-wrapper">
-    <%= link_to 'Article Heaven', root_path, class: "brand-logo" %>
+    <%= link_to root_path, class: "brand-logo" do %>
+      <%= material_icon.cloud.md_36 %>
+      Article Heaven
+    <% end %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><%= link_to 'Articles', articles_path %></li>
       <li><%= link_to 'Signup', new_user_registration_path, class: "waves-effect waves-light btn no-decoration" unless user_signed_in? %></li>
