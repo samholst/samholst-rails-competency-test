@@ -72,7 +72,7 @@ class ArticlesController < ApplicationController
 
     def is_logged_in
       if !user_signed_in?
-        redirect_to new_user_registration_path, notice: 'Please signup or login to view this article.'
+        redirect_to new_user_registration_path, notice: 'Please sign up or login to view this article.'
       end
     end
 end
