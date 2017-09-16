@@ -11,7 +11,7 @@ puts "One normal user created"
                           email: "editoruser@test.com",
                           password: "asdfasdf",
                           password_confirmation: "asdfasdf",
-                          roles: "editor_user"
+                          roles: "editor"
                           )
 puts "One editor user created"
 
@@ -20,7 +20,7 @@ puts "One editor user created"
                             email: "adminuser@test.com",
                             password: "asdfasdf",
                             password_confirmation: "asdfasdf",
-                            roles: "admin_user"
+                            roles: "admin"
                             )
 puts "One admin user created"
 

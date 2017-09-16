@@ -1,7 +1,7 @@
 <div class="full-background"></div>
 <h1 class="article-title white-text">Articles</h1>
 
-<% if logged_in?(:editor_user) %>
+<% if logged_in?(:editor) %>
   <center>
     <%= link_to 'New Article', new_article_path, class: "waves-effect waves-light btn no-decoration blue lighten-1"  %>
   </center>

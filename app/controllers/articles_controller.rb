@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :check_owner, only: [:update, :edit, :destroy]
   access all: [:index],
          user: {except: [:destroy, :new, :create, :update, :edit]},
-         editor_user: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
+         editor: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
 
   def index
     @articles = Article.all

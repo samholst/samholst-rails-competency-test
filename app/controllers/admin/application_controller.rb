@@ -9,7 +9,7 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      if !logged_in?(:admin_user)
+      if !logged_in?(:admin)
         redirect_to root_path, notice: 'You are not an admin user.'
       end
     end
