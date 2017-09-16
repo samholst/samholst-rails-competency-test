@@ -1,5 +1,9 @@
 <% if logged_in?(:editor_user) %>
-  <%= render "editor_options", article: article  %>
+  <%= link_to 'View Article', article %>
+  <%= link_to 'Edit', edit_article_path(article) %>
+  <%= link_to 'Delete', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } %>
 <% elsif logged_in?(:admin_user) %>
-  <%= render "admin_options", article: article  %>
+  <%= link_to 'View Article', article %>
+<% else %>
+  <%= link_to 'View Article', article %>
 <% end %>

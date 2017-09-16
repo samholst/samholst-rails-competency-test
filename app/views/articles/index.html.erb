@@ -19,13 +19,7 @@
             <p><%= article.content %></p>
           </div>
           <div class="card-action">
-            <% if logged_in?(:editor_user) %>
-              <%= render "editor_options", article: article  %>
-            <% elsif  %>
-              <%= render "admin_options", article: article  %>
-            <% else %>
-              <%= render "user_options", article: article  %>
-            <% end %>
+            <%= render "edit_options", article: article  %>
           </div>
         </div>
       </div>
