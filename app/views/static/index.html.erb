@@ -56,3 +56,22 @@
     </div>
   <% end %>
 </div>
+
+<div class="row article-row">
+  <h2 class="center-content white-text">Hackers Articles</h2>
+  <% @hackers_articles.each do |hackers_articles| %>
+    <div class="col s12 m6 article-main">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <h5 class="header article-title"><%= hackers_articles.title %></h5>
+          <div class="card-content">
+            <p><%= hackers_articles.content %></p>
+          </div>
+          <div class="card-action">
+            <%= render "articles/edit_options", article: hackers_articles  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

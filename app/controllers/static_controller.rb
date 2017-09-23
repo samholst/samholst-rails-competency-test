@@ -3,6 +3,7 @@ class StaticController < ApplicationController
     @car_articles = article_limit_three "Cars"
     @ruby_articles = article_limit_three "Ruby"
     @game_articles = article_limit_three "Games"
+    @hackers_articles = article_limit_three "Hackers"
   end
 
   private
