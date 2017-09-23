@@ -61,8 +61,6 @@ class ArticlesController < ApplicationController
     end
 
     def check_owner
-      if current_user.id != @article.user_id
-        redirect_to articles_path, notice: 'You are not the posts owner.'
-      end
+      current_user.articles.find(params[:id])
     end
 end
