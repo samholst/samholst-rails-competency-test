@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :check_owner, only: [:update, :edit, :destroy]
+  before_action :check_owner, only: [:edit, :update, :destroy]
   access all: [:index], user: [:show, :index], editor: :all
 
   def index
