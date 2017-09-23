@@ -1,7 +1,7 @@
 <% if logged_in?(:editor) %>
   <%= link_to 'View Article', article %>
-  <%= link_to 'Edit', edit_article_path(article) %>
-  <%= link_to 'Delete', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_article_path(article) if current_user.id == article.user_id %>
+  <%= link_to 'Delete', article, id: "article-#{article.id}-delete", method: :delete, data: { confirm: 'Are you sure?' } if current_user.id == article.user_id %>
 <% elsif logged_in?(:admin) %>
   <%= link_to 'View Article', article %>
 <% else %>
