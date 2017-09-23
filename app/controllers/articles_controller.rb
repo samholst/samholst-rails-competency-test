@@ -1,10 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :is_logged_in, only: [:show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :check_owner, only: [:update, :edit, :destroy]
-  access all: [:index],
-         user: {except: [:destroy, :new, :create, :update, :edit]},
-         editor: :all, admin_user: {except: [:destroy, :new, :create, :update, :edit]}
+  access all: [:index], user: [:show, :index], editor: :all
 
   def index
     @articles = Article.all
@@ -65,14 +62,8 @@ class ArticlesController < ApplicationController
     end
 
     def check_owner
-      if current_user.id != @article.user_id
+      if !current_user.articles.find(params[:id])
         redirect_to articles_path, notice: 'You are not the posts owner.'
-      end
-    end
-
-    def is_logged_in
-      if !user_signed_in?
-        redirect_to new_user_registration_path, notice: 'Please sign up or login to view this article.'
       end
     end
 end
