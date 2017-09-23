@@ -1,24 +1,58 @@
-# README
+# Simple News App - Rails Competency Test
+To get started please create a public github project called `[yourname]-rails-competency-test]` and carefully read the following instructions.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Commit all of the code to your project and email it to `isaac@isaacsloan.com`. May the force be with you.
 
-Things you may want to cover:
+## User Personas
+The project will have multiple roles that interact with each other.
+* Guest (No Login)
+* Vanilla Users (Logged in - No special role)
+* Editor Users
+* Admin Users *(Extra Credit)*
 
-* Ruby version
+## User Functionality
+##### Guests (No Login)
+* Can see homepage with first 3 articles from each category.
+* Can see article index page.
+* Are sent to login/signup page if they want to see article show page.
+  * Signup form can be included on the login page or just linked to from the login page.
+* Can signup
+* Can Login
 
-* System dependencies
+##### Vanilla Users
+* Can see everything a guest can
+* Can see article show pages.
+* Can logout
 
-* Configuration
+##### Editor Users
+* Can do everything a vanilla User can.
+* Can create articles
+* Can delete articles that they created
+* Can edit articles that they created
 
-* Database creation
+##### Admin User *(Extra Credit)*
+* Can create users and set roles.
+* Can edit users and change roles.
+* Can't edit/destroy/create articles.
 
-* Database initialization
+## Article Table
+Table will contain **title**, **content**, **category**, **user_id**.
 
-* How to run the test suite
+## Roles
+Use one of these gems: Petergate *(Preferred)*, Pundit, Cancancan.
+###### Role Names
+* user
+* editor
+* admin *(Extra Credit)*
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database
+Use sqlite
 
-* Deployment instructions
+## Testing
+Use minitest as the test suite.
 
-* ...
+## Authentication
+Devise can be used for authentication.
+
+## Templating
+slim *(Prefered)*, haml, erb
