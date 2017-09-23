@@ -18,8 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.user_id = current_user.id
+    @article = current_user.articles.build(article_params)
 
     respond_to do |format|
       if @article.save
@@ -62,7 +61,7 @@ class ArticlesController < ApplicationController
     end
 
     def check_owner
-      if !current_user.articles.find(params[:id])
+      if current_user.id != @article.user_id
         redirect_to articles_path, notice: 'You are not the posts owner.'
       end
     end
