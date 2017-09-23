@@ -1,10 +1,10 @@
 .full-background
 h1.article-title.white-text Articles
-- logged_in?(:editor)
-center
-  = link_to 'New Article', new_article_path, class: "waves-effect waves-light btn no-decoration blue lighten-1"
-br
-br
+- if logged_in?(:editor)
+  center
+    = link_to 'New Article', new_article_path, class: "waves-effect waves-light btn no-decoration blue lighten-1"
+  br
+  br
 .wrapper
   #columns
     - @articles.each do |article|
