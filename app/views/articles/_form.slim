@@ -1,0 +1,25 @@
+= form_with(model: article, local: true) do |form|
+  - article.errors.any?
+    - article.errors.full_messages.each do |message|
+      = js add_gritter(message, title: "Error, missing item!", sticky: false)
+
+  .input-field
+    = form.text_field :title, id: :article_title
+    = form.label :title
+
+  .input-field
+    = form.text_area :content, id: :article_content, class: "materialize-textarea"
+    = form.label :content
+
+  .field
+    / <%#= form.text_field :category, id: :article_category %>
+    = form.label :category
+    select id="article_category" name="article[category]" style="display: inherit;" class="browser-default"
+      option value="Ruby" Ruby
+      option value="Games" Games
+      option value="Cars" Cars
+      option value="Hackers" Hackers
+    br
+
+  .actions
+    = form.submit class: "waves-effect waves-light btn no-decoration blue lighten-1"

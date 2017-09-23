@@ -1,0 +1,49 @@
+.full-background
+
+.row.article-row
+  h2 class="center-content white-text" Ruby Articles
+  - @ruby_articles.each do |ruby_article|
+    .col.s12.m6.article-main
+      .card.horizontal
+        .card-stacked
+          h5 class="header article-title" #{ruby_article.title}
+          .card-content
+            p #{ruby_article.content}
+          .card-action
+            = render "articles/edit_options", article: ruby_article
+
+.row.article-row
+  h2 class="center-content white-text" Hacker Articles
+  - @hackers_articles.each do |hackers_articles|
+    .col.s12.m6.article-main
+      .card.horizontal
+        .card-stacked
+          h5 class="header article-title" #{hackers_articles.title}
+          .card-content
+            p #{hackers_articles.content}
+          .card-action
+            = render "articles/edit_options", article: hackers_articles
+
+.row.article-row
+  h2 class="center-content white-text" Car Articles
+  - @car_articles.each do |car_article|
+    .col.s12.m6.article-main
+      .card.horizontal
+        .card-stacked
+          h5 class="header article-title" #{car_article.title}
+          .card-content
+            p #{car_article.content}
+          .card-action
+            = render "articles/edit_options", article: car_article
+
+.row.article-row
+  h2 class="center-content white-text" Game Articles
+  - @game_articles.each do |game_article|
+    .col.s12.m6.article-main
+      .card.horizontal
+        .card-stacked
+          h5 class="header article-title" #{game_article.title}
+          .card-content
+            p #{game_article.content}
+          .card-action
+            = render "articles/edit_options", article: game_article
