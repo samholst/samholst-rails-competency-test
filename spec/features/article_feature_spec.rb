@@ -36,7 +36,7 @@ describe 'navigate articles' do
       login_as(@editor_user, :scope => :user)
     end
 
-    it 'can be edited by its owner' do
+    it 'can be created by an owner' do
       visit new_article_path
       fill_in 'article[title]', with: "My New Title 2"
       fill_in 'article[content]', with: "I have been created?????????"
@@ -49,6 +49,7 @@ describe 'navigate articles' do
   describe 'Edit' do
     before do
       @editor_user = FactoryGirl.create(:editor_user)
+      @editor_user_2 = FactoryGirl.create(:editor_user_2)
       login_as(@editor_user, :scope => :user)
       @article = Article.create!(title: "Cars My test", content: "Test 123 123", category: "Cars", user_id: @editor_user.id)
     end
@@ -61,6 +62,13 @@ describe 'navigate articles' do
       click_on "Update Article"
       expect(page).to have_content(/I have been changed!!/)
     end
+
+    # it 'cannot be edited by a differnt editor' do
+    #   logout(@editor_user)
+    #   login_as(@editor_user_2, :scope => :user)
+    #   visit edit_article_path(@article)
+    #   expect{ response }.to raise_exception(ActiveRecord::RecordNotFound)
+    # end
   end
 
   describe 'delete' do

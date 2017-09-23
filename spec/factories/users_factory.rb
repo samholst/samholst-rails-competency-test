@@ -27,4 +27,13 @@ FactoryGirl.define do
     password_confirmation 'asdfasdf'
     roles 'editor'
   end
+
+  factory :editor_user_2, class: "EditorUser" do
+    first_name 'Editor_2'
+    last_name 'User_2'
+    email { generate :email }
+    password 'asdfasdf'
+    password_confirmation 'asdfasdf'
+    roles 'editor'
+  end
 end
